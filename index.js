@@ -4,8 +4,8 @@ if (process.argv.length !== 4) {
   process.exit(0)
 }
 const fs = require('fs')
-const inputDir = process.argv[2] || 'css'
-const outputFile = process.argv[3] || 'compiled.css'
+const inputDir = process.argv[2]
+const outputFile = process.argv[3]
 let output = ''
 
 let fileNames = fs.readdirSync(inputDir)
