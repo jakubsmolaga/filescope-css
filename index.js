@@ -13,7 +13,12 @@ let data, prefix, charPos, previousPos
 const currentChar = () => data[charPos]
 const isWhitespace = c => (c === ' ') || (c === '\n') || (c === '\t')
 const consumeWhitespace = () => consumeWhile(isWhitespace)
-const consumeComment = () => consumeWhile(() => data.substr(charPos, 2) !== '*/')
+
+const consumeComment = () => {
+  consumeWhile(() => data.substr(charPos, 2) !== '*/')
+  consumeChar()
+  consumeChar()
+}
 
 const skipWhile = (condition) => {
   while (condition(currentChar())) charPos++
