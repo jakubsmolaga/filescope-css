@@ -42,6 +42,8 @@ const consumeChar = () => {
 const consumeClassBlock = () => {
   consumeChar() // eat the dot
   output += prefix
+  consumeWhile(c => c !== '{' && c !== '.')
+  if (currentChar() === '.') return consumeClassBlock()
   consumeWhile(c => c !== '}')
   consumeChar() // eat the "}"
 }
