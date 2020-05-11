@@ -11,7 +11,7 @@ let output = ''
 let data, prefix, charPos, previousPos
 
 const currentChar = () => data[charPos]
-const isWhitespace = c => (c === ' ') || (c === '\n') || (c === '\t')
+const isWhitespace = c => (c === ' ') || (c === '\n') || (c === '\t') || (c === '\r')
 const consumeWhitespace = () => consumeWhile(isWhitespace)
 
 const consumeComment = () => {
